@@ -27,7 +27,7 @@ $tiempoT: 0.5s;
         height: ($columna*2) + $espaciado;
         //ajuste desfase para hexagonos en el grid
         transition: $tiempoT;
-        &:nth-of-type(6n + 1){
+        &:nth-of-type(7n + 1){
             grid-column: 2 / span 2;
         }
         &:hover{
@@ -36,18 +36,18 @@ $tiempoT: 0.5s;
     }
 }
 // media queries
-@media screen and (min-width: 270px) and (max-width: 510px) {
-    .galleryItem{
-        &:first-of-type{
-            grid-column: 1 / span 2;
-        }
+@media screen and (max-width: 508px) {
+    .galleryItem:first-of-type{
+        
+            grid-column: 1 / span 2 !important;
+        
     }
     .Gallery{
         grid-auto-rows: ($columna*2) + $espaciado;
         background-color: red;
     }
 }
-@media screen and (min-width: 511px) and (max-width: 685px) {
+@media screen and (min-width: 509px) and (max-width: 685px) {
     .galleryItem:nth-child(odd){
         grid-column: 2 / span 2;
     }
@@ -74,7 +74,7 @@ $tiempoT: 0.5s;
         background-color: pink;
     }
 }
-@media screen and (min-width: 1034) and (max-width: 1208px) {
+@media screen and (min-width: 1034px) and (max-width: 1208px) {
     .galleryItem:nth-of-type(5n + 1){
         grid-column: 2 / span 2;
     }
@@ -83,7 +83,7 @@ $tiempoT: 0.5s;
         background-color: lightcoral;
     }
 }
-@media screen and (min-width: 1209) and (max-width: 1384px) {
+@media screen and (min-width: 1209px) and (max-width: 1384px) {
     .galleryItem:nth-of-type(6n + 1){
         grid-column: 2 / span 2;
     }
@@ -92,7 +92,7 @@ $tiempoT: 0.5s;
         background-color: lightgreen;
     }
 }
-@media screen and (min-width: 1385) {
+@media screen and (min-width: 1385px) {
     .galleryItem:nth-of-type(7n + 1){
         grid-column: 2 / span 2;
     }
