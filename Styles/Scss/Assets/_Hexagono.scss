@@ -8,7 +8,7 @@ $tiempoT: 0.5s;
     grid-auto-rows: 200px;
     justify-content: center;
     width: 85%;
-    max-width: 1800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     background-color: blue;
@@ -27,7 +27,7 @@ $tiempoT: 0.5s;
         height: ($columna*2) + $espaciado;
         //ajuste desfase para hexagonos en el grid
         transition: $tiempoT;
-        &:first-of-type{
+        &:nth-of-type(6n + 1){
             grid-column: 2 / span 2;
         }
         &:hover{
@@ -83,12 +83,21 @@ $tiempoT: 0.5s;
         background-color: lightcoral;
     }
 }
-@media screen and (min-width: 1209) and (max-width: 1300px) {
+@media screen and (min-width: 1209) and (max-width: 1384px) {
     .galleryItem:nth-of-type(6n + 1){
         grid-column: 2 / span 2;
     }
     .Gallery{
         
         background-color: lightgreen;
+    }
+}
+@media screen and (min-width: 1385) {
+    .galleryItem:nth-of-type(7n + 1){
+        grid-column: 2 / span 2;
+    }
+    .Gallery{
+        
+        background-color: lightcyan;
     }
 }
