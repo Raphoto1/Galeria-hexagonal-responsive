@@ -1,0 +1,51 @@
+// tamaño columna control general, 1 rem = 16px
+$columna: 133px;
+$espaciado: 16px;
+$tiempoT: 1s;
+.Gallery{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, $columna);
+    grid-auto-rows: 200px;
+    justify-content: center;
+    width: 85%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    gap: $espaciado;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .galleryItem{
+        //clip a hexagono
+        clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+        //ajustar separacion
+        grid-column: span 2;
+        //ajustar deformacion vertical
+        height: ($columna*2) + $espaciado;
+        //ajuste desfase para hexagonos en el grid
+        transition: $tiempoT;
+        &:first-of-type{
+            grid-column: 2/ span 2;
+        }
+        &:hover{
+            filter: brightness(0.3);
+        }
+    }
+}
+// media query
+@media screen and (min-width: 270px) and (max-width: 290px) {
+    .galleryItem {
+        &:first-of-type{
+            
+            grid-column: 1 / span 1;
+            
+            
+        }
+    }
+    .Gallery{
+        grid-auto-rows: ($columna*2) + $espaciado;
+    }
+}
