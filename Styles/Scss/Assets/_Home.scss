@@ -1,0 +1,29 @@
+.hexaR{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: absolute;
+    color: red;
+    
+    //se mantiene en cero para forzar y el flex centra
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.color{
+    display: flex;
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: $tiempoT;
+    background-color: rgba($color: #000000, $alpha: 0.0);
+    top: 0;
+    left: 0;
+}
+//para aplicar hover se aplica en el padre y el color es un div vacio
+.galleryItem:hover .color{
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}
